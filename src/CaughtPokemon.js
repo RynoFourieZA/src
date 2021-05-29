@@ -3,30 +3,30 @@ import React, { useState } from "react";
 const CaughtPokemon = (props) => {
   // const [caught, setCaught] = useState(0);
   const [caught, setCaught] = useState([]);
-  // const [pokemonNameInput, setPokemonNameInput] = useState("");
+  const [pokemonNameInput, setPokemonNameInput] = useState("");
 
   const catchPokemon = () => {
-    const randomPokemon = [
-      "Bulbasaur",
-      "Ivysaur",
-      "Venusaur",
-      "Charmander",
-      "Charmeleon",
-      "Charizard",
-      "Squirtle",
-      "Wartortle",
-      "Blastoise",
-    ];
-    let catchRandomPokemon = randomPokemon[Math.floor(Math.random() * randomPokemon.length)];
+    // const randomPokemon = [
+    //   "Bulbasaur",
+    //   "Ivysaur",
+    //   "Venusaur",
+    //   "Charmander",
+    //   "Charmeleon",
+    //   "Charizard",
+    //   "Squirtle",
+    //   "Wartortle",
+    //   "Blastoise",
+    // ];
+    // let catchRandomPokemon = randomPokemon[Math.floor(Math.random() * randomPokemon.length)];
     // console.log(catchRandomPokemon);
     // // setCaught(caught + 1);
-    setCaught(caught.concat(catchRandomPokemon));
+    setCaught(caught.concat(pokemonNameInput));
     // setCaught(pokemonNameInput.push(catchRandomPokemon));
   };
 
-  // function handleInputChange(event) {
-  //   setPokemonNameInput(event.target.value);
-  // }
+  function handleInputChange(event) {
+    setPokemonNameInput(event.target.value);
+  }
   return (
     <div>
       <p>
@@ -38,13 +38,13 @@ const CaughtPokemon = (props) => {
         ))}
       </ul>
 
-      <button onClick={catchPokemon}>Add</button>
-      {/* <input
+      <input
         type="text"
         value={pokemonNameInput}
         onChange={handleInputChange}
-      /> */}
-      {/* <button onClick={() => setCaught([])}>Reset</button> */}
+      />
+      <button onClick={catchPokemon}>Catch Pokemon</button>
+      <button onClick={() => setCaught([])}>Reset</button>
     </div>
   );
 };
